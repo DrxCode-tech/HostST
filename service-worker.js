@@ -1,12 +1,28 @@
-const CACHE_NAME = 'drxcode-cache-v2';
+const CACHE_NAME = 'adex-cache-v2';
 const FILES_TO_CACHE = [
   '/',
   '/index.html',
-  '/offline.html',
-  '/style.css',
-  '/manifest.json',
+  '/ADEXsign.html',
+  '/ADEXlogin.html',
+  '/ADEXpasswordReset.html',
+  '/aboutADEX.html',
+  '/review.html',
+  '/V3ADEX.html',
+  '/AI_V3ADEX.html',
+  '/ADEXsign.js',
+  '/ADEXlogin.js',
+  '/ADEXreset.js',
+  '/V3ADEX.js',
+  '/review.js',
+  '/attH.html',
+  '/firebaseConfig.js',
+  '/V3ADEX.css',
+  '/ADEXimge.jpg',
+  '/ADEXige.jpg',
+  '/icon.png',
   '/icon-192.png',
-  '/icon-512.png'
+  '/icon-512.png',
+  '/manifest.json'
 ];
 
 // Install: Pre-cache core files
