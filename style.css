@@ -1,99 +1,77 @@
-/* Reset and General Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
-
 body {
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: white;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  background: radial-gradient(circle at top right, #000, #172714);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Header Styles */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 10%;
-    background: rgba(0, 0, 0, 0.3);
-}
-
-header h1 {
-    font-size: 24px;
+  background: black;
+  color: #87fc9f;
+  padding: 15px 10px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 255, 100, 0.3);
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-    transition: 0.3s ease-in-out;
-}
-
-nav a:hover {
-    color: #ffcc00;
-}
-
-/* Centered Card */
-main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin: 0 10px;
+  text-decoration: none;
+  color: #87fc9f;
+  font-weight: bold;
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 30px;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    width: 80%;
-    max-width: 400px;
-    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background: #121212;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 500px;
+  text-align: center;
+  border: 1px solid #058d04;
+  box-shadow: 0 0 15px rgba(8, 141, 10, 0.4);
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.3);
-}
-
-.card h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.card p {
-    font-size: 16px;
-    margin-bottom: 15px;
-}
-
-/* Cool Button */
 .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #ffcc00;
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background 0.3s ease-in-out, transform 0.2s;
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #048d16, #87fc9f, #048d12);
+  border: none;
+  border-radius: 8px;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  animation: move 4s linear infinite;
 }
 
-.btn:hover {
-    background: #e6b800;
-    transform: scale(1.1);
+@keyframes move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* Footer */
 footer {
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.3);
-    font-size: 14px;
+  margin-top: auto;
+  background: black;
+  padding: 10px;
+  color: #87fc9f;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.install-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #058d04;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }

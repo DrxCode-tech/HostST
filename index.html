@@ -1,32 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cool Website</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cool Website</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
 </head>
 <body>
-    <header>
-        <h1>DrxCode Tech</h1>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Projects</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
+  <header>
+    <h1>DrxCode Tech</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
 
-    <main>
-        <div class="card">
-            <h2>Welcome to My Cool Website</h2>
-            <p>This is a stylish and responsive web page designed with HTML & CSS. No JavaScript needed!</p>
-            <a href="#" class="btn">Explore More</a>
-        </div>
-    </main>
+  <main>
+    <div class="card">
+      <h2>Welcome to My Cool Website</h2>
+      <p>This is a stylish and responsive web page designed with HTML & CSS. No JavaScript needed!</p>
+      <a href="#" class="btn">Explore More</a>
+    </div>
+  </main>
 
-    <footer>
-        <p>&copy; 2025 DrxCode Tech. All rights reserved.</p>
-    </footer>
+  <footer>
+    <p>&copy; 2025 DrxCode Tech. All rights reserved.</p>
+  </footer>
+
+  <!-- Install Button -->
+  <button id="installButton" class="install-btn" style="display: none;">
+    Install App
+  </button>
+
+  <script>
+    // Register Service Worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(reg => console.log('Service Worker registered:', reg.scope))
+          .catch(err => console.error('SW registration failed:', err));
+      });
+    }
+
+    // Handle PWA installation prompt
+    let deferredPrompt;
+    const installButton = document.getElementById('installButton');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      installButton.style.display = 'block';
+    });
+
+    installButton.addEventListener('click', async () => {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const choice = await deferredPrompt.userChoice;
+        if (choice.outcome === 'accepted') {
+          console.log('User accepted install');
+        } else {
+          console.log('User dismissed install');
+        }
+        deferredPrompt = null;
+        installButton.style.display = 'none';
+      }
+    });
+
+    window.addEventListener('appinstalled', () => {
+      console.log('App installed successfully');
+      installButton.style.display = 'none';
+    });
+  </script>
 </body>
 </html>
