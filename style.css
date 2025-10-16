@@ -1,77 +1,112 @@
-body {
+/* ===== DrxCode Tech: Modern Style ===== */
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Basic Reset */
+* {
   margin: 0;
-  font-family: "Nunito", sans-serif;
-  background: radial-gradient(circle at top right, #000, #172714);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0078ff, #00bcd4);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
 header {
-  background: black;
-  color: #87fc9f;
-  padding: 15px 10px;
-  text-align: center;
-  box-shadow: 0 3px 10px rgba(0, 255, 100, 0.3);
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(6px);
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 nav a {
-  margin: 0 10px;
+  color: white;
   text-decoration: none;
-  color: #87fc9f;
-  font-weight: bold;
+  margin-left: 1.2rem;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+nav a:hover {
+  opacity: 0.7;
+}
+
+/* Card */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card {
-  background: #121212;
-  margin: 40px auto;
-  padding: 30px;
-  border-radius: 15px;
-  max-width: 500px;
+  background: white;
+  color: #222;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
   text-align: center;
-  border: 1px solid #058d04;
-  box-shadow: 0 0 15px rgba(8, 141, 10, 0.4);
+  animation: fadeIn 1s ease;
 }
 
+.card h2 {
+  margin-bottom: 1rem;
+  color: #0078ff;
+}
+
+.card p {
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Button */
 .btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  background: linear-gradient(90deg, #048d16, #87fc9f, #048d12);
-  border: none;
-  border-radius: 8px;
-  color: black;
-  font-weight: bold;
-  text-decoration: none;
-  animation: move 4s linear infinite;
-}
-
-@keyframes move {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-footer {
-  margin-top: auto;
-  background: black;
-  padding: 10px;
-  color: #87fc9f;
-  text-align: center;
-  font-size: 0.9em;
-}
-
-.install-btn {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background: #058d04;
+  background: #0078ff;
   color: white;
-  padding: 10px 18px;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  transition: 0.3s;
+  display: inline-block;
+  font-weight: 500;
 }
+
+.btn:hover {
+  background: #005fcc;
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.25);
+  font-size: 0.9rem;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🧪 TEST CHANGE (v2): Slight blue gradient background */
+/* When you upload a new version, try changing the gradient colors —
+   if it updates after reload, your Service Worker is refreshing correctly! */
